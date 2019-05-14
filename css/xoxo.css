@@ -106,7 +106,22 @@ footer {
 footer .bottom-item {
   margin-left: 5px;
   margin-right: 5px;
-  color: #2f2f2f;
+  color: #252525;
+}
+footer .bottom-img{
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 9px;
+  border-style: none;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+footer .bottom-copyright{
+  font-size: 8px;
 }
 footer .bottom-item:hover {
   color: #1E90FF;
