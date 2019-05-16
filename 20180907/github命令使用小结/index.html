@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#252525">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+  
+  
+    <meta name="keywords" content="github,">
+  
+
+  
+    <meta name="description" content="思绪偶尔在这里停留">
+  
+
+<link rel="shortcut icon" type="image/png" href="/images/logo.png">
+
+<title>git命令使用小结</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css">
+    
+      <link rel="stylesheet" href="/css/xoxo.css">
+    
+  
+</head>
+
+
+<body>
+  <div class="nav-container">
+    <nav class="home-menu pure-menu pure-menu-horizontal">
+  <a class="pure-menu-heading" href="/">
+    <img class="avatar" src="/images/logo_180x180.png">
+    <span class="title">读立书生</span>
+  </a>
+
+  <ul class="pure-menu-list clearfix">
+      
+          
+            <li class="pure-menu-item"><a href="/" class="pure-menu-link">首页</a></li>
+          
+      
+          
+            <li class="pure-menu-item"><a href="/archives" class="pure-menu-link">归档</a></li>
+          
+      
+          
+            <li class="pure-menu-item"><a href="/categories" class="pure-menu-link">分类</a></li>
+          
+      
+          
+            <li class="pure-menu-item"><a href="/tags" class="pure-menu-link">标签</a></li>
+          
+      
+          
+            <li class="pure-menu-item"><a href="/search" class="pure-menu-link">搜索</a></li>
+          
+      
+          
+            <li class="pure-menu-item"><a href="/about" class="pure-menu-link">关于</a></li>
+          
+      
+  </ul>
+   
+</nav>
+  </div>
+
+  <div class="container" id="content-outer">
+    <div class="inner" id="content-inner">
+      <div class="post-container">
+  <article class="post" id="post">
+    <header class="post-header text-center">
+      <h1 class="title">
+        git命令使用小结
+      </h1>
+      <span>
+        
+        <time class="time" datetime="2018-09-07T05:45:29.000Z">
+        2018-09-07
+      </time>
+        
+      </span>
+      <span class="slash">/</span>
+      <span class="post-meta">
+      <span class="post-categories">
+        <ul class="article-categories-list"><li class="article-categories-list-item"><a class="article-categories-list-link" href="/categories/技术/">技术</a></li></ul>
+      </span>
+    </span>
+      <span class="slash">/</span>
+      <span class="read">
+      <span id="busuanzi_value_page_pv"></span> 点击
+    </span>
+
+    </header>
+
+    <div class="post-content">
+      <p>以下是平时我使用到的git命令，在此做一个总结，方便查看</p>
+<h2 id="远程仓库相关命令"><a href="#远程仓库相关命令" class="headerlink" title="远程仓库相关命令"></a>远程仓库相关命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">检出仓库：$ git clone git://github.com/jquery/jquery.git</span><br><span class="line"></span><br><span class="line">查看远程仓库：$ git remote -v</span><br><span class="line"></span><br><span class="line">添加远程仓库：$ git remote add [name] [url]</span><br><span class="line"></span><br><span class="line">删除远程仓库：$ git remote rm [name]</span><br><span class="line"></span><br><span class="line">修改远程仓库：$ git remote set-url –push [name] [newUrl]</span><br><span class="line"></span><br><span class="line">拉取远程仓库：$ git pull [remoteName] [localBranchName]</span><br><span class="line"></span><br><span class="line">推送远程仓库：$ git push [remoteName] [localBranchName]</span><br><span class="line"></span><br><span class="line">*如果想把本地的某个分支test提交到远程仓库，并作为远程仓库的master分支，或者作为另外一个名叫test的分支，如下：</span><br><span class="line"></span><br><span class="line">$git push origin test:master         // 提交本地test分支作为远程的master分支</span><br><span class="line"></span><br><span class="line">$git push origin test:test              // 提交本地test分支作为远程的test分支</span><br></pre></td></tr></table></figure>
+<h2 id="分支-branch-操作相关命令"><a href="#分支-branch-操作相关命令" class="headerlink" title="分支(branch)操作相关命令"></a>分支(branch)操作相关命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">查看本地分支：$ git branch</span><br><span class="line"></span><br><span class="line">查看远程分支：$ git branch -r</span><br><span class="line"></span><br><span class="line">创建本地分支：$ git branch [name] —-注意新分支创建后不会自动切换为当前分支</span><br><span class="line"></span><br><span class="line">切换分支：$ git checkout [name]</span><br><span class="line"></span><br><span class="line">创建新分支并立即切换到新分支：$ git checkout -b [name]</span><br><span class="line"></span><br><span class="line">删除分支：$ git branch -d [name] —- -d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-D选项</span><br><span class="line"></span><br><span class="line">合并分支：$ git merge [name] —-将名称为[name]的分支与当前分支合并</span><br><span class="line"></span><br><span class="line">创建远程分支(本地分支push到远程)：$ git push origin [name]</span><br><span class="line"></span><br><span class="line">删除远程分支：git push origin :heads/[name]&amp;nbsp;或&amp;nbsp; gitpush origin :[name] </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">*创建空的分支：(执行命令之前记得先提交你当前分支的修改，否则会被强制删干净没得后悔)</span><br><span class="line"></span><br><span class="line">$git symbolic-ref HEAD refs/heads/[name]</span><br><span class="line"></span><br><span class="line">$rm .git/index</span><br><span class="line"></span><br><span class="line">$git clean -fdx</span><br></pre></td></tr></table></figure>
+<h2 id="版本-tag-操作相关命令"><a href="#版本-tag-操作相关命令" class="headerlink" title="版本(tag)操作相关命令"></a>版本(tag)操作相关命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">查看版本：$ git tag</span><br><span class="line"></span><br><span class="line">创建版本：$ git tag [name]</span><br><span class="line"></span><br><span class="line">删除版本：$ git tag -d [name]</span><br><span class="line"></span><br><span class="line">查看远程版本：$ git tag -r</span><br><span class="line"></span><br><span class="line">创建远程版本(本地版本push到远程)：$ git push origin [name]</span><br><span class="line"></span><br><span class="line">删除远程版本：$ git push origin :refs/tags/[name]</span><br><span class="line"></span><br><span class="line">合并远程仓库的tag到本地：$ git pull origin –tags</span><br><span class="line"></span><br><span class="line">上传本地tag到远程仓库：$ git push origin –tags</span><br><span class="line"></span><br><span class="line">创建带注释的tag：$ git tag -a [name] -m ‘yourMessage’</span><br></pre></td></tr></table></figure>
+    </div>
+  </article>
+  <div class="toc-container">
+    
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#远程仓库相关命令"><span class="toc-text">远程仓库相关命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分支-branch-操作相关命令"><span class="toc-text">分支(branch)操作相关命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#版本-tag-操作相关命令"><span class="toc-text">版本(tag)操作相关命令</span></a></li></ol>
+  </div>
+
+
+  </div>
+</div>
+<div class="copyright">
+</div>
+<div class="share" style="width: 100%;">  
+</div>
+
+  
+    <div class="post-nav">
+      <div class="post-nav-item post-nav-next">
+        
+          <span>〈 </span>
+          <a href="/20180904/写在前面/" rel="next" title="写在前面">
+          写在前面
+          </a>
+        
+      </div>
+  
+      <div class="post-nav-item post-nav-prev">
+          
+      </div>
+    </div>
+  
+
+
+    </div>
+
+    
+
+  </div>
+  <footer class="footer text-center">
+    <div id="bottom-inner">
+        <a href="https://github.com/ifkid" target="_blank"><img class="bottom-img" src="/images/github.png"></a> | 
+        <a href="mailto:zhangpin@hust.edu.cn" target="_blank"><img class="bottom-img" src="/images/email.png"></a>
+        <br>
+        <span class="bottom-copyright">©2019 ifkid. All Rights Reserved.</span>
+    </div>   
+</footer>
+  
+
+<script>
+  (function(window, document, undefined) {
+
+    var timer = null;
+
+    function returnTop() {
+      cancelAnimationFrame(timer);
+      timer = requestAnimationFrame(function fn() {
+        var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (oTop > 0) {
+          document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+          timer = requestAnimationFrame(fn);
+        } else {
+          cancelAnimationFrame(timer);
+        }
+      });
+    }
+
+    var hearts = [];
+    window.requestAnimationFrame = (function() {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function(callback) {
+          setTimeout(callback, 1000 / 60);
+        }
+    })();
+    init();
+
+    function init() {
+      css(".heart{z-index:9999;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+      attachEvent();
+      gameloop();
+      addMenuEvent();
+    }
+
+    function gameloop() {
+      for (var i = 0; i < hearts.length; i++) {
+        if (hearts[i].alpha <= 0) {
+          document.body.removeChild(hearts[i].el);
+          hearts.splice(i, 1);
+          continue;
+        }
+        hearts[i].y--;
+        hearts[i].scale += 0.004;
+        hearts[i].alpha -= 0.013;
+        hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
+      }
+      requestAnimationFrame(gameloop);
+    }
+
+    /**
+     * 给logo设置点击事件
+     * 
+     * - 回到顶部
+     * - 出现爱心
+     */
+    function attachEvent() {
+      var old = typeof window.onclick === "function" && window.onclick;
+      var logo = document.getElementById("logo");
+      if (logo) {
+        logo.onclick = function(event) {
+          returnTop();
+          old && old();
+          createHeart(event);
+        }
+      }
+      
+    }
+
+    function createHeart(event) {
+      var d = document.createElement("div");
+      d.className = "heart";
+      hearts.push({
+        el: d,
+        x: event.clientX - 5,
+        y: event.clientY - 5,
+        scale: 1,
+        alpha: 1,
+        color: randomColor()
+      });
+      document.body.appendChild(d);
+    }
+
+    function css(css) {
+      var style = document.createElement("style");
+      style.type = "text/css";
+      try {
+        style.appendChild(document.createTextNode(css));
+      } catch (ex) {
+        style.styleSheet.cssText = css;
+      }
+      document.getElementsByTagName('head')[0].appendChild(style);
+    }
+
+    function randomColor() {
+      // return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
+      return "#F44336";
+    }
+
+    function addMenuEvent() {
+      var menu = document.getElementById('menu-main-post');
+      if (menu) {
+        var toc = document.getElementById('toc');
+        if (toc) {
+          menu.onclick = function() {
+            if (toc) {
+              if (toc.style.display == 'block') {
+                toc.style.display = 'none';
+              } else {
+                toc.style.display = 'block';
+              }
+            }
+          };
+        } else {
+          menu.style.display = 'none';
+        }
+      }
+    }
+
+  })(window, document);
+</script>
+
+  
+
+
+
+</body>
+</html>
