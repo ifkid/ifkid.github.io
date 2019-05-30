@@ -1,5 +1,6 @@
 .text-center {
   text-align: center !important;
+  font-weight: normal;
 }
 * {
   box-sizing: border-box;

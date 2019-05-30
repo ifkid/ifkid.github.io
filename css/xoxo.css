@@ -885,16 +885,22 @@ body {
 .archives .archive a:hover {
   color: #1E90FF;
 }
-.copyright {
+.copyright{
   margin: 15px 30px;
-  font-size: 12px;
-  text-align: center;
+  font-size: 13px;
+  text-align: left;
+  font-weight: bold;
 }
 .copyright a {
-  text-decoration: underline;
+  text-decoration:none;
+  color: #2196f3
 }
 .copyright a:hover {
-  color: #2196F3;
+  background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center center;
+ transition: background-image 3s;
+  background-image:url(logo.png);
 }
 pre,
 code {
@@ -1049,5 +1055,26 @@ code {
 .highlight .function .title {
   color: #525252;
 }
+
+.block {
+  text-transform: lowercase;
+  padding: 0 5vw 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.block .block__link {
+  position: relative;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  /*color: var(--color-blocklink);*/
+}
+
+.block .block__link:hover {
+  color: var(--color-blocklink-hover);
+}
+
+/*.block__title span,*/
+/*.block__link span,*/
 
 /*# sourceMappingURL=xoxo.css.map */
